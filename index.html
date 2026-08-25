@@ -1,199 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#050505" />
-  <meta name="description" content="The Grafinity by Sajidul Islam Mahad. Professional graphic design solutions for brands, businesses and digital media." />
-  <meta name="author" content="Sajidul Islam Mahad" />
-  <meta property="og:title" content="The Grafinity | Graphic Design Portfolio" />
-  <meta property="og:description" content="Giving Ideas, Visual Identity." />
-  <meta property="og:image" content="images/brand-cover.png" />
-  <meta property="og:type" content="website" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>The Grafinity | Graphic Design Portfolio</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="The Grafinity by Sajidul Islam Mahad. Giving Ideas, Visual Identity.">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <div class="noise" aria-hidden="true"></div>
 
-  <header class="site-header" id="top">
-    <nav class="nav container">
-      <a class="brand" href="#home" aria-label="The Grafinity home">
-        <img src="images/profile.jpg" alt="The Grafinity logo" />
-        <span data-brand>THE GRAFINITY</span>
-      </a>
+  <header class="header">
+    <div class="container nav">
+      <a href="#home" class="logo">THE <span>GRAFINITY</span></a>
 
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="nav-links">
+      <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#work">Portfolio</a>
-        <a href="#why">Why Me</a>
-        <a href="#contact" class="nav-cta">Let's Talk</a>
-      </div>
-    </nav>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
+
   <main>
-    <section class="hero section" id="home">
-      <div class="hero-grid"></div>
-      <div class="container hero-inner">
-        <div class="hero-copy reveal">
-          <div class="eyebrow"><span></span> Creative Graphic Design Studio</div>
-          <h1>Creative Design That <em>Builds Powerful Brands.</em></h1>
-          <p class="hero-subtitle">Professional Graphic Design Solutions by <strong data-brand>The Grafinity</strong>.</p>
-          <p class="hero-text">Visual concepts with a modern edge, built to make your brand look memorable, consistent and ready to compete.</p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#work">View Portfolio <span>↗</span></a>
-            <a class="btn btn-ghost" data-whatsapp href="#" target="_blank" rel="noopener">Hire Me <span>↗</span></a>
-          </div>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-content">
 
-          <div class="hero-meta">
-            <div><strong>10+</strong><span>Design Services</span></div>
-            <div><strong>100%</strong><span>Creative Focus</span></div>
-            <div><strong>24/7</strong><span>Easy Contact</span></div>
+        <div class="hero-text">
+          <p class="eyebrow">CREATIVE GRAPHIC DESIGN STUDIO</p>
+
+          <h1>
+            Giving Ideas,
+            <span>Visual Identity.</span>
+          </h1>
+
+          <p class="intro">
+            Professional graphic design solutions for brands,
+            businesses and digital platforms.
+          </p>
+
+          <div class="buttons">
+            <a href="#work" class="btn primary">View My Work</a>
+            <a href="#contact" class="btn secondary">Let's Talk</a>
           </div>
         </div>
 
-        <div class="hero-visual reveal">
-          <div class="hero-card glass">
-            <div class="hero-card-top">
-              <span>SELECTED BRAND SHOWCASE</span>
-              <span class="live-dot">● LIVE</span>
-            </div>
-            <img src="images/brand-cover.png" alt="The Grafinity brand showcase" />
-            <div class="hero-card-bottom">
-              <div>
-                <small>Brand</small>
-                <strong data-brand>The Grafinity</strong>
-              </div>
-              <div class="mini-mark">G<span>i</span></div>
-            </div>
+        <div class="hero-card">
+          <div class="glow"></div>
+          <img src="profile.jpg" alt="Sajidul Islam Mahad">
+          <div class="card-text">
+            <small>CREATIVE DESIGNER</small>
+            <h2>Sajidul Islam Mahad</h2>
+            <p>The Grafinity</p>
           </div>
-          <div class="orb orb-one"></div>
-          <div class="orb orb-two"></div>
         </div>
+
       </div>
     </section>
 
-    <section class="section section-line" id="about">
-      <div class="container split">
-        <div class="section-heading reveal">
-          <span class="section-number">01 / ABOUT</span>
-          <h2>Ideas become <span>visual identity.</span></h2>
-        </div>
-        <div class="about-copy reveal">
-          <p><strong>The Grafinity</strong> is a creative graphic design brand led by <strong>Sajidul Islam Mahad</strong>, focused on turning ideas into clean, bold and purposeful visual communication.</p>
-          <p>From logos and brand identity to social media creatives and print-ready designs, every project is approached with attention to detail, modern aesthetics and the client's goals.</p>
-          <div class="signature">
-            <img src="images/profile.jpg" alt="The Grafinity mark" />
-            <div><strong data-name>Sajidul Islam Mahad</strong><span data-tagline>Giving Ideas, Visual Identity</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="services">
+    <!-- ABOUT -->
+    <section id="about" class="section">
       <div class="container">
-        <div class="section-heading centered reveal">
-          <span class="section-number">02 / SERVICES</span>
-          <h2>Design solutions for <span>every touchpoint.</span></h2>
-          <p>Flexible creative support for brands, businesses, campaigns and digital platforms.</p>
-        </div>
-        <div class="services-grid" id="servicesGrid"></div>
-      </div>
-    </section>
 
-    <section class="section work-section" id="work">
-      <div class="container">
-        <div class="section-heading work-heading reveal">
+        <p class="section-number">01 / ABOUT</p>
+
+        <h2 class="section-title">
+          Ideas become
+          <span>visual identity.</span>
+        </h2>
+
+        <div class="about-grid">
           <div>
-            <span class="section-number">03 / SELECTED WORK</span>
-            <h2>Visuals that <span>make an impact.</span></h2>
+            <p>
+              The Grafinity is a creative graphic design brand led by
+              <strong>Sajidul Islam Mahad</strong>.
+            </p>
+
+            <p>
+              I focus on transforming ideas into clean, bold and purposeful
+              visual communication.
+            </p>
           </div>
-          <div class="filter-wrap" id="filters"></div>
+
+          <div class="glass-box">
+            <p>BRAND</p>
+            <h3>The Grafinity</h3>
+
+            <p>TAGLINE</p>
+            <h3>Giving Ideas, Visual Identity</h3>
+          </div>
         </div>
 
-        <div class="portfolio-grid" id="portfolioGrid"></div>
       </div>
     </section>
 
-    <section class="section why-section" id="why">
+
+    <!-- SERVICES -->
+    <section class="section dark-section">
       <div class="container">
-        <div class="section-heading centered reveal">
-          <span class="section-number">04 / WHY THE GRAFINITY</span>
-          <h2>More than a design. <span>A creative partner.</span></h2>
+
+        <p class="section-number">02 / SERVICES</p>
+
+        <h2 class="section-title">
+          Design solutions for
+          <span>every touchpoint.</span>
+        </h2>
+
+        <div class="services">
+
+          <div class="service-card">
+            <span>01</span>
+            <h3>Brand Identity</h3>
+            <p>Logo design, visual identity and brand direction.</p>
+          </div>
+
+          <div class="service-card">
+            <span>02</span>
+            <h3>Social Media Design</h3>
+            <p>Modern and engaging social media creative designs.</p>
+          </div>
+
+          <div class="service-card">
+            <span>03</span>
+            <h3>Graphic Design</h3>
+            <p>Creative visual solutions for digital and print.</p>
+          </div>
+
         </div>
-        <div class="why-grid" id="whyGrid"></div>
+
       </div>
     </section>
 
-    <section class="section testimonials-section" id="testimonials">
+
+    <!-- WORK -->
+    <section id="work" class="section">
       <div class="container">
-        <div class="section-heading centered reveal">
-          <span class="section-number">05 / TESTIMONIALS</span>
-          <h2>Real words from <span>real clients.</span></h2>
+
+        <p class="section-number">03 / SELECTED WORK</p>
+
+        <h2 class="section-title">
+          Visuals that
+          <span>make an impact.</span>
+        </h2>
+
+        <div class="portfolio">
+
+          <div class="portfolio-item">
+            <img src="social-poster-1.png" alt="Social Media Poster 1">
+          </div>
+
+          <div class="portfolio-item">
+            <img src="social-poster-2.png" alt="Social Media Poster 2">
+          </div>
+
+          <div class="portfolio-item">
+            <img src="social-poster-3.png" alt="Social Media Poster 3">
+          </div>
+
+          <div class="portfolio-item cover">
+            <img src="brand-cover.png" alt="The Grafinity Brand Cover">
+          </div>
+
         </div>
-        <div class="testimonials-grid" id="testimonialsGrid"></div>
+
       </div>
     </section>
 
-    <section class="section contact-section" id="contact">
-      <div class="container contact-card glass reveal">
-        <div class="contact-copy">
-          <span class="section-number">06 / CONTACT</span>
-          <h2>Let's build <span>your ideas</span> together.</h2>
-          <p>Have a brand, campaign or design project in mind? Let's turn the idea into something people remember.</p>
+
+    <!-- WHY -->
+    <section class="section dark-section">
+      <div class="container">
+
+        <p class="section-number">04 / WHY THE GRAFINITY</p>
+
+        <h2 class="section-title">
+          More than a design.
+          <span>A creative partner.</span>
+        </h2>
+
+        <div class="features">
+
+          <div>
+            <strong>01</strong>
+            <h3>Creative</h3>
+            <p>Fresh visual ideas built around your goals.</p>
+          </div>
+
+          <div>
+            <strong>02</strong>
+            <h3>Professional</h3>
+            <p>Clean, consistent and purposeful design.</p>
+          </div>
+
+          <div>
+            <strong>03</strong>
+            <h3>Modern</h3>
+            <p>Futuristic aesthetics with a strong visual identity.</p>
+          </div>
+
         </div>
-        <div class="contact-actions">
-          <a class="contact-item" data-email-link href="#">
-            <small>Email</small>
-            <strong data-email>mdmahadorg@gmail.com</strong>
-          </a>
-          <a class="contact-item" data-phone-link href="#">
-            <small>Phone / WhatsApp</small>
-            <strong data-phone>+8801781513640</strong>
-          </a>
-          <a class="btn btn-primary full" data-whatsapp href="#" target="_blank" rel="noopener">Let's Work Together <span>↗</span></a>
-        </div>
+
       </div>
     </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container">
+
+        <p class="section-number">05 / LET'S TALK</p>
+
+        <h2 class="section-title">
+          Have an idea?
+          <span>Let's make it visual.</span>
+        </h2>
+
+        <div class="contact-box">
+
+          <div>
+            <p class="label">NAME</p>
+            <h3>Sajidul Islam Mahad</h3>
+          </div>
+
+          <div>
+            <p class="label">EMAIL</p>
+            <a href="mailto:mdmahadorg@gmail.com">
+              mdmahadorg@gmail.com
+            </a>
+          </div>
+
+          <div>
+            <p class="label">PHONE</p>
+            <a href="tel:+8801781513640">
+              +880 1781 513640
+            </a>
+          </div>
+
+        </div>
+
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/mdmahad/" target="_blank">LinkedIn</a>
+          <a href="https://www.facebook.com/sajiduislammahad/" target="_blank">Facebook</a>
+          <a href="https://www.instagram.com/sajidul.islam.mahad/" target="_blank">Instagram</a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer">
-    <div class="container footer-top">
-      <div>
-        <a class="brand footer-brand" href="#top">
-          <img src="images/profile.jpg" alt="The Grafinity logo" />
-          <span data-brand>THE GRAFINITY</span>
-        </a>
-        <p data-tagline>Giving Ideas, Visual Identity</p>
-      </div>
 
-      <div class="socials" id="socials"></div>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year"></span> <span data-brand>The Grafinity</span>. All rights reserved.</span>
-      <span>Designed by <strong data-name>Sajidul Islam Mahad</strong></span>
+  <footer>
+    <div class="container">
+      <p>© 2026 The Grafinity. All Rights Reserved.</p>
+      <p>Giving Ideas, Visual Identity.</p>
     </div>
   </footer>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Close preview">×</button>
-    <img id="lightboxImage" src="" alt="" />
-    <div class="lightbox-caption" id="lightboxCaption"></div>
-  </div>
-
-  <script src="js/script.js"></script>
 </body>
 </html>
