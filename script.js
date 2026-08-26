@@ -14,7 +14,7 @@ const siteConfig = {
   social: {
     linkedin: "https://www.linkedin.com/in/sajiduislammahad/",
     facebook: "https://www.facebook.com/sajiduislammahad/",
-    instagram: "https://www.instagram.com/sajiduislammahad/"
+    instagram: "https://www.instagram.com/sajidul.islam.mahad/"
   },
 
   services: [
@@ -43,19 +43,19 @@ const siteConfig = {
     {
       title: "Burger Social Campaign",
       category: "Social Media",
-      image: "images/social-poster-1.png",
+      image: "social-poster-1.png",
       description: "Food promotion social media creative"
     },
     {
       title: "Pizza Promotion",
       category: "Social Media",
-      image: "images/social-poster-2.png",
+      image: "social-poster-2.png",
       description: "Promotional food campaign poster"
     },
     {
       title: "Biryani Campaign",
       category: "Social Media",
-      image: "images/social-poster-3.png",
+      image: "social-poster-3.png",
       description: "Restaurant promotional creative"
     }
   ],
@@ -71,21 +71,59 @@ const siteConfig = {
   testimonials: []
 };
 
-/* ---------- Automatic setup ---------- */
+
+/* =========================================================
+   AUTOMATIC SETUP
+   ========================================================= */
+
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
 document.title = `${siteConfig.brandName} | Graphic Design Portfolio`;
-$$("[data-brand]").forEach(el => el.textContent = siteConfig.brandName.toUpperCase());
-$$("[data-name]").forEach(el => el.textContent = siteConfig.name);
-$$("[data-tagline]").forEach(el => el.textContent = siteConfig.tagline);
-$$("[data-phone]").forEach(el => el.textContent = siteConfig.phone);
-$$("[data-email]").forEach(el => el.textContent = siteConfig.email);
+
+$$("[data-brand]").forEach(el => {
+  el.textContent = siteConfig.brandName.toUpperCase();
+});
+
+$$("[data-name]").forEach(el => {
+  el.textContent = siteConfig.name;
+});
+
+$$("[data-tagline]").forEach(el => {
+  el.textContent = siteConfig.tagline;
+});
+
+$$("[data-phone]").forEach(el => {
+  el.textContent = siteConfig.phone;
+});
+
+$$("[data-email]").forEach(el => {
+  el.textContent = siteConfig.email;
+});
+
+
+/* =========================================================
+   CONTACT LINKS
+   ========================================================= */
 
 const phoneDigits = siteConfig.phone.replace(/\D/g, "");
-$$("[data-phone-link]").forEach(el => el.href = `tel:+${phoneDigits}`);
-$$("[data-email-link]").forEach(el => el.href = `mailto:${siteConfig.email}`);
-$$("[data-whatsapp]").forEach(el => el.href = `https://wa.me/${phoneDigits}`);
+
+$$("[data-phone-link]").forEach(el => {
+  el.href = `tel:+${phoneDigits}`;
+});
+
+$$("[data-email-link]").forEach(el => {
+  el.href = `mailto:${siteConfig.email}`;
+});
+
+$$("[data-whatsapp]").forEach(el => {
+  el.href = `https://wa.me/${phoneDigits}`;
+});
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
 
 function renderServices() {
   $("#servicesGrid").innerHTML = siteConfig.services.map(service => `
@@ -97,6 +135,11 @@ function renderServices() {
   `).join("");
 }
 
+
+/* =========================================================
+   WHY CHOOSE ME
+   ========================================================= */
+
 function renderWhy() {
   $("#whyGrid").innerHTML = siteConfig.whyChooseMe.map(item => `
     <article class="why-card reveal">
@@ -107,13 +150,21 @@ function renderWhy() {
   `).join("");
 }
 
+
+/* =========================================================
+   TESTIMONIALS
+   ========================================================= */
+
 function renderTestimonials() {
   const section = $(".testimonials-section");
+
   if (!siteConfig.testimonials.length) {
     section.style.display = "none";
     return;
   }
+
   section.style.display = "block";
+
   $("#testimonialsGrid").innerHTML = siteConfig.testimonials.map(item => `
     <article class="testimonial reveal">
       <p>“${item.quote}”</p>
@@ -123,20 +174,35 @@ function renderTestimonials() {
   `).join("");
 }
 
+
+/* =========================================================
+   PORTFOLIO
+   ========================================================= */
+
 function renderPortfolio(filter = "All") {
   const items = filter === "All"
     ? siteConfig.portfolio
     : siteConfig.portfolio.filter(item => item.category === filter);
 
   $("#portfolioGrid").innerHTML = items.map((item, index) => `
-    <article class="portfolio-item reveal" data-image="${item.image}" data-title="${item.title}">
+    <article
+      class="portfolio-item reveal"
+      data-image="${item.image}"
+      data-title="${item.title}"
+    >
       <div class="project-image">
-        <img src="${item.image}" alt="${item.title}" loading="${index > 1 ? "lazy" : "eager"}">
+        <img
+          src="${item.image}"
+          alt="${item.title}"
+          loading="${index > 1 ? "lazy" : "eager"}"
+        >
+
         <div class="project-overlay">
           <span>${item.category}</span>
           <h3>${item.title}</h3>
         </div>
       </div>
+
       <div class="project-info">
         <div>
           <small>${item.category}</small>
@@ -148,25 +214,55 @@ function renderPortfolio(filter = "All") {
   `).join("");
 
   $$(".portfolio-item").forEach(card => {
-    card.addEventListener("click", () => openLightbox(card.dataset.image, card.dataset.title));
+    card.addEventListener("click", () => {
+      openLightbox(
+        card.dataset.image,
+        card.dataset.title
+      );
+    });
   });
+
   observeReveals();
 }
 
+
+/* =========================================================
+   PORTFOLIO FILTERS
+   ========================================================= */
+
 function renderFilters() {
-  const categories = ["All", ...new Set(siteConfig.portfolio.map(item => item.category))];
+  const categories = [
+    "All",
+    ...new Set(siteConfig.portfolio.map(item => item.category))
+  ];
+
   $("#filters").innerHTML = categories.map((category, index) => `
-    <button class="filter-btn ${index === 0 ? "active" : ""}" data-filter="${category}">${category}</button>
+    <button
+      class="filter-btn ${index === 0 ? "active" : ""}"
+      data-filter="${category}"
+    >
+      ${category}
+    </button>
   `).join("");
 
   $$(".filter-btn").forEach(button => {
     button.addEventListener("click", () => {
-      $$(".filter-btn").forEach(btn => btn.classList.remove("active"));
+
+      $$(".filter-btn").forEach(btn => {
+        btn.classList.remove("active");
+      });
+
       button.classList.add("active");
+
       renderPortfolio(button.dataset.filter);
     });
   });
 }
+
+
+/* =========================================================
+   SOCIAL LINKS
+   ========================================================= */
 
 function renderSocials() {
   const items = [
@@ -174,65 +270,147 @@ function renderSocials() {
     ["f", "Facebook", siteConfig.social.facebook],
     ["ig", "Instagram", siteConfig.social.instagram]
   ];
+
   $("#socials").innerHTML = items.map(item => `
-    <a class="social-link" href="${item[2]}" target="_blank" rel="noopener noreferrer" aria-label="${item[1]}">${item[0]}</a>
+    <a
+      class="social-link"
+      href="${item[2]}"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="${item[1]}"
+    >
+      ${item[0]}
+    </a>
   `).join("");
 }
 
+
+/* =========================================================
+   SCROLL REVEAL ANIMATION
+   ========================================================= */
+
 function observeReveals() {
   const observer = new IntersectionObserver(entries => {
+
     entries.forEach(entry => {
+
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
         observer.unobserve(entry.target);
       }
+
     });
-  }, { threshold: .08 });
-  $$(".reveal:not(.visible)").forEach(el => observer.observe(el));
+
+  }, {
+    threshold: 0.08
+  });
+
+  $$(".reveal:not(.visible)").forEach(el => {
+    observer.observe(el);
+  });
 }
+
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
 
 function openLightbox(image, title) {
   $("#lightboxImage").src = image;
   $("#lightboxImage").alt = title;
   $("#lightboxCaption").textContent = title;
+
   $("#lightbox").classList.add("open");
   $("#lightbox").setAttribute("aria-hidden", "false");
+
   document.body.classList.add("no-scroll");
 }
 
 function closeLightbox() {
   $("#lightbox").classList.remove("open");
   $("#lightbox").setAttribute("aria-hidden", "true");
+
   document.body.classList.remove("no-scroll");
 }
 
 $(".lightbox-close").addEventListener("click", closeLightbox);
+
 $("#lightbox").addEventListener("click", e => {
-  if (e.target === $("#lightbox")) closeLightbox();
+  if (e.target === $("#lightbox")) {
+    closeLightbox();
+  }
 });
+
 document.addEventListener("keydown", e => {
-  if (e.key === "Escape") closeLightbox();
+  if (e.key === "Escape") {
+    closeLightbox();
+  }
 });
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
 
 const menuToggle = $(".menu-toggle");
 const navLinks = $(".nav-links");
+
 menuToggle.addEventListener("click", () => {
+
   const open = navLinks.classList.toggle("open");
+
   menuToggle.setAttribute("aria-expanded", open);
+
 });
-$$(".nav-links a").forEach(link => link.addEventListener("click", () => navLinks.classList.remove("open")));
+
+$$(".nav-links a").forEach(link => {
+
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+
+});
+
+
+/* =========================================================
+   HEADER SCROLL EFFECT
+   ========================================================= */
 
 window.addEventListener("scroll", () => {
-  $(".site-header").classList.toggle("scrolled", window.scrollY > 20);
+
+  $(".site-header").classList.toggle(
+    "scrolled",
+    window.scrollY > 20
+  );
+
 });
+
+
+/* =========================================================
+   CURSOR GLOW
+   ========================================================= */
 
 const cursorGlow = $(".cursor-glow");
+
 window.addEventListener("pointermove", e => {
+
   cursorGlow.style.left = `${e.clientX}px`;
   cursorGlow.style.top = `${e.clientY}px`;
+
 });
 
+
+/* =========================================================
+   CURRENT YEAR
+   ========================================================= */
+
 $("#year").textContent = new Date().getFullYear();
+
+
+/* =========================================================
+   INITIALIZE WEBSITE
+   ========================================================= */
 
 renderServices();
 renderWhy();
